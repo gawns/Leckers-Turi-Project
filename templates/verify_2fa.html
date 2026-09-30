@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-page-wrapper">
+    <div class="form-container" style="background: #121212; padding: 40px; border-radius: 20px; text-align: center;">
+        <h2 class="gold">Verifikasi 2FA</h2>
+        <p style="color: #ccc;">Masukkan 6 digit kode dari aplikasi autentikator Anda.</p>
+        <form method="POST" action="{{ url_for('verify_2fa') }}">
+            <input type="text" name="otp_code" placeholder="000000" maxlength="6" required 
+                   style="font-size: 2rem; text-align: center; letter-spacing: 10px;">
+            <button type="submit" class="btn-auth-main">VERIFIKASI</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
