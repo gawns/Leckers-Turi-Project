@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin_thury",
+      "email": "admin@pizzathury.com",
+      "password": "admin123",
+      "role": "admin",
+      "created_at": "2024-01-01 10:00:00"
+    },
+    {
+      "id": 2,
+      "username": "customer_john",
+      "email": "john@gmail.com",
+      "password": "john123",
+      "role": "user",
+      "created_at": "2024-01-05 14:30:00"
+    }
+  ],
+  "menus": [
+    {
+      "id": 1,
+      "nama": "Margherita Supreme",
+      "deskripsi": "Pizza klasik dengan tomat segar, mozzarella, dan basil",
+      "harga": 85000,
+      "gambar_url": "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+      "kategori": "Premium Signature",
+      "active": 1
+    },
+    {
+      "id": 2,
+      "nama": "Pepperoni Special",
+      "deskripsi": "Dengan pepperoni pilihan dan keju mozzarella ganda",
+      "harga": 95000,
+      "gambar_url": "https://images.unsplash.com/photo-1628840042765-356cda07504e",
+      "kategori": "Classic Fav",
+      "active": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "menu_nama": "Margherita Supreme",
+      "quantity": 2,
+      "total_harga": 170000,
+      "alamat": "Jl. Merdeka No. 123, Yogyakarta",
+      "koordinat": "-7.7956,110.3695",
+      "status": "pending",
+      "kode_pesanan": "lch-pz-thry-1234",
+      "restaurant_id": 1,
+      "payment_method": "QRIS",
+      "tanggal": "2024-01-10 15:30:00"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "nama": "Thury Pizza Cabang Pusat",
+      "alamat": "Jl. Malioboro No. 1, Yogyakarta",
+      "latitude": -7.7956,
+      "longitude": 110.3695,
+      "active": 1
+    }
+  ]
+}
