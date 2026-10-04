@@ -3,6 +3,7 @@ import mysql.connector
 from flask import send_from_directory
 from functools import wraps
 import random
+import os
 from datetime import datetime, timedelta
 import math
 import hashlib
@@ -20,13 +21,16 @@ app = Flask(__name__)
 app.secret_key = 'kunci_rahasia_dapur_thury_2025'
 
 # ==================== DATABASE CONNECTION ====================
+# Di lokal: pakai MySQL localhost seperti biasa.
+# Di Vercel: isi Environment Variables (Settings > Environment Variables):
+#   DB_HOST, DB_USER, DB_PASSWORD, DB_NAME  -> koneksi MySQL remote/hosting
 def get_db_connection():
     try:
         conn = mysql.connector.connect(
-            host='localhost',
-            user='root',
-            password='',  # Sesuaikan password MySQL
-            database='db_pizza_thury',
+            host=os.environ.get('DB_HOST', 'localhost'),
+            user=os.environ.get('DB_USER', 'root'),
+            password=os.environ.get('DB_PASSWORD', ''),  # Sesuaikan password MySQL
+            database=os.environ.get('DB_NAME', 'db_pizza_thury'),
             autocommit=False
         )
         return conn
